@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/jquery.js" ></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/home.css"/>
+    <title>Expedition</title>
+</head>
+<body>	
+    
+<header>
+	 <div class="center">
+		
+		<div class="logo">Expedition</div>
+
+		<nav class="desktop">
+			<ul>
+				
+				<li><a href="index.php">Home</a></li>
+
+				<?php if(isset($user)){ ?>
+					<li><a href="perfil.php">Perfil</a></li>
+					<li><a href="pedido.php">Pedidos</a></li>
+					<li><a href="sair.php">Sair</a></li>
+				<?php }else{ ?>
+					<li><a href="register.php">Cadastrar</a></li>
+					<li><a href="login.php">Login</a></li>
+				<?php }?>
+
+			</ul>
+		</nav>
+
+		<nav class="mobile">
+			<div class="botao-menu">
+				<i class="fas fa-bars"></i>
+			</div>
+			<ul>
+				
+				<li><a href="index.php">Home</a></li>
+				<?php if(isset($user)){ ?>
+					<li><a href="perfil.php">Perfil</a></li>
+					<li><a href="pedido.php">Pedidos</a></li>
+					<li><a href="sair.php">Sair</a></li>
+				<?php }else{ ?>
+					<li><a href="register.php">Cadastrar</a></li>
+					<li><a href="login.php">Login</a></li>
+				<?php }?>
+				
+			</ul>
+		</nav>
+
+	</div>
+
+</header>
+
+<script>
+
+//aqui vai todo nosso codigo menu
+$('nav.mobile').click(function(){
+	//abrir menu com fadeIn
+	var listaMenu = $('nav.mobile ul');
+
+	if(listaMenu.is(':hidden') == true){
+	   var icone = $('.botao-menu').find('i');
+		icone.removeClass('fa-bars');
+		icone.addClass('fa-times');
+		listaMenu.fadeIn();
+	}else{
+		var icone = $('.botao-menu').find('i');
+		icone.removeClass('fa-times');
+		icone.addClass('fa-bars');
+		listaMenu.fadeOut();
+	}
+
+});
+//Fim do codigo do menu
+
+</script>
+
+
+<script src="https://sdk.mercadopago.com/js/v2"></script>
+<script>
+
+$(function(){
+
+
+// Regra carrinho clear
+$("#bt-limpa-carrinho").click(function(){
+	document.location = document.location.origin+'/ecommerce/index.php?limpa_carrinho=true';
+})
+
+// Regra pagamento
+function payment(id){
+  //  Inicializar checkout
+  const checkout = new MercadoPago('TEST-7a1d4b40-3a9e-484a-ab93-a4ee7b5c8226', {
+        locale: 'pt-BR'
+  });
+  
+  checkout.checkout({
+      preference: {
+          id: id,     
+      },
+      autoOpen: true,
+   });
+}
+
+
+
+// Regra finalizar compra
+$('#bt-finaliza-compra').click(function(){			
+	
+	var api = document.location.origin+'/ecommerce/carrinho.php';
+	var session = <?php echo json_encode($_SESSION); ?>;
+
+	$.ajax({	    
+	    method: 'POST',
+	    url: api,
+	    data: {op: "finalizar_compra", data: session}
+	}).done(function(msg){	   
+		var data = JSON.parse(msg);						
+		if(data.id){
+			payment(data.id);
+		}else{
+			alert(data.error);
+		}
+
+	    // document.location = document.location.origin+'/ecommerce/index.php';
+	});
+
+})
+
+
+});
+</script>

@@ -1,0 +1,489 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+header .logo{
+    color: #efefef;
+    font-size: 25px;
+}
+
+header .center .desktop ul li a:hover{
+    padding: 5px 10px;
+    background: #efefef;
+    border-radius: 5px;
+    color: #111;
+}
+
+header .center .desktop ul li a{
+    text-decoration: none;
+    color: #efefef;
+    padding: 5px 10px;
+    
+    border-radius: 5px;
+}
+
+header .center{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: rgb(74, 101, 255);
+    padding: 20px 0;
+}
+
+header .center .desktop ul{
+    display: flex;
+    list-style: none;
+}
+
+header .center .desktop ul li{
+    margin: 0 20px;
+}
+
+header .center .mobile{
+    display: none;
+}
+
+
+
+@media only screen and (max-width: 600px){
+    header .center .desktop ul{
+        display: none;
+    }
+
+    header .center .mobile{
+        display: block;
+    }
+
+    header .center .mobile ul{
+        display: none;
+    }
+
+    .botao-menu{
+        font-size: 20px;
+        color: #efefef;
+        z-index: 3;
+    }
+
+    nav.mobile ul{
+       list-style: none;
+       position: fixed;
+       margin-top: 77px;
+       text-align: center;
+       top: 0;
+       left: 0;
+       right: 0;
+       background: rgb(74, 101, 255);
+    }
+
+    nav.mobile ul li a{
+        text-decoration: none;
+        color: #111;
+     }
+
+    nav.mobile ul li a{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 40px;
+        background: #efefef;
+        border: 1px solid rgb(196, 196, 196);
+     }
+
+}
+
+/**--------------------------------------------------------------------**/
+/**--------------------------------------------------------------------**/
+
+
+/*---------------FORMULÁRIO---------------*//*---------------FORMULÁRIO---------------*/
+/*---------------FORMULÁRIO---------------*//*---------------FORMULÁRIO---------------*/
+
+section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.loginContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 1px 1px 10px 4px rgb(230, 230, 230);
+    width: 350px;
+    background: #fff;
+    border-radius: 20px;
+    padding: 15px;
+    margin: 40px;
+}
+
+.loginContainer .titulo h1{
+    font-size: 20px;
+}
+
+.loginContainer .titulo .fa-circle{
+    font-size: 15px;
+    padding-right: 3px;
+}
+
+.loginContainer .login{
+    margin-top: 20px;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.loginContainer form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.loginContainer form input{
+    width: 280px;
+    height: 30px;
+    border: none;
+    outline: none;
+    background: none;
+}
+
+.loginContainer form input[type="submit"]{
+    width: 280px;
+    height: 30px;
+    border: none;
+    outline: none;
+    height: 40px;
+    width: 300px;
+    background: rgb(43, 116, 226);
+    font-size: 18px;
+    border-radius: 10px;
+    margin: 15px 0 30px 0;
+    color: #fff;
+    cursor: pointer;
+}
+
+.loginContainer form input[type="email"]{
+    border-bottom: 2px solid rgb(223, 223, 223);
+    margin: 20px 0;
+    padding: 0 10px;
+}
+.loginContainer form input[type="password"]{
+    border-bottom: 2px solid rgb(223, 223, 223);
+    margin: 20px 0;
+    padding: 0 10px;
+}
+
+.loginContainer  form input[type="text"]{
+    border-bottom: 2px solid rgb(223, 223, 223);
+    margin: 20px 0;
+    padding: 0 10px;
+}
+
+.loginContainer  form input[type="tel"]{
+    border-bottom: 2px solid rgb(223, 223, 223);
+    margin: 20px 0;
+    padding: 0 10px;
+}
+
+
+
+.loginContainer form .button{
+    width: 280px;
+    height: 30px;
+    border: none;
+    outline: none;
+    height: 40px;
+    width: 300px;
+    background: rgb(43, 116, 226);
+    font-size: 18px;
+    border-radius: 10px;
+    margin: 15px 0 30px 0;
+    color: #fff;
+    cursor: pointer;
+}
+
+.loginContainer span a{
+   font-size: 18px;
+   text-decoration: none;
+   color: blue;
+}
+
+.msg{
+    text-align: center;
+    width: 100%;
+    background: rgb(221, 221, 63);
+}
+
+.msg2{
+    text-align: center;
+    width: 100%;
+    background: rgb(221, 63, 63);
+    color: #efefef;
+}
+
+/*---------------FORMULÁRIO FIM---------------*//*---------------FORMULÁRIO FIM---------------*/
+/*---------------FORMULÁRIO FIM---------------*//*---------------FORMULÁRIO FIM---------------*/
+
+div#content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+div#tabelaUsuarios{
+    margin-top: 100px;
+    width: 100%;
+    max-width: 1024px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .1);
+    overflow-x: auto;
+}
+
+div#tabelaUsuarios span.title{
+    font-size: 18px;
+    padding: 20px 10px;
+    display: block;
+    color: #4e5bd2;
+}
+
+div#tabelaUsuarios table{
+    width: 100%;
+    font-family: FuturaPT;
+    border-top: 1px solid #d8d8d8;
+    border-collapse: collapse;
+}
+
+div#tabelaUsuarios table thead td{
+    font-size: 14px;
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #d8d8d8;
+    color: #6c6c6c;
+}
+
+div#tabelaUsuarios table thead td:first-child{
+    text-align: left;
+}
+
+div#tabelaUsuarios table thead td:nth-child(even){
+    border-left: 1px solid #d8d8d8;
+    border-right: 1px solid #d8d8d8;
+}
+
+div#tabelaUsuarios table tbody tr{
+    transition: .3s;
+    cursor: pointer;
+}
+
+div#tabelaUsuarios table tbody tr:hover{
+    background: #f8f8f8;
+}
+
+div#tabelaUsuarios table tbody tr:nth-child(even){
+    background-color: #ececec;
+}
+
+div#tabelaUsuarios table tbody td{
+    padding: 10px;
+    color: #333;
+    text-align: center;
+}
+
+div#tabelaUsuarios table tbody td:first-child{
+    text-align: left;
+}
+
+div#tabelaUsuarios table tbody td button{
+    font-size: 14px;
+    color: rgb(255, 255, 255);
+    padding: 10px 30px;
+    background: rgb(74, 116, 255);
+    cursor: pointer;
+    transition: .3s;
+    border: none;
+    border-radius: 10px;
+}
+
+
+.nome{
+    width: 100%;
+    max-width: 900px;
+    margin: auto;
+    text-align: center;
+}
+
+.nome h5{
+    color: rgb(74, 101, 255);
+    text-align: left;
+    font-size: 24px;
+    width: 100%;
+    padding: 10px;
+}
+
+.comando p{
+    margin: 10px 0;
+}
+
+
+.my_class{
+    width: 280px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid rgb(74, 101, 255);
+    margin: 20px;
+}
+
+.my_class a{
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    padding: 5px 30px;
+    border-radius: 5px;
+    background: rgb(74, 101, 255);
+    color: #efefef;
+    margin: 12px 5px 5px 5px;
+}
+
+.my_class img{
+    margin-top: 20px;
+    margin-bottom: 15px;
+    width: 250px;
+}
+
+.pagina{
+    text-align: center;
+    padding: 20px;
+    margin: 10px;
+}
+
+.good{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+
+
+/*Regras do carrinho*/
+div#content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+div#tabelaProdutos{
+    margin-top: 100px;
+    width: 100%;
+    max-width: 1024px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .1);
+    overflow-x: auto;
+}
+
+div#tabelaProdutos span.title{
+    font-size: 18px;
+    padding: 20px 10px;
+    display: block;
+    color: #4e5bd2;
+}
+
+div#tabelaProdutos table{
+    width: 100%;
+    font-family: FuturaPT;
+    border-top: 1px solid #d8d8d8;
+    border-collapse: collapse;
+}
+
+div#tabelaProdutos table thead td{
+    font-size: 14px;
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #d8d8d8;
+    color: #6c6c6c;
+}
+
+div#tabelaProdutos table thead td:first-child{
+    text-align: left;
+}
+
+ table thead td:nth-child(even){
+    border-left: 1px solid #d8d8d8;
+    border-right: 1px solid #d8d8d8;
+}
+
+div#tabelaProdutos table tbody tr{
+    transition: .3s;
+    cursor: pointer;
+}
+
+div#tabelaProdutos table tbody tr:hover{
+    background: #f8f8f8;
+}
+
+div#tabelaProdutos table tbody tr:nth-child(even){
+    background-color: #ececec;
+}
+
+div#tabelaProdutos table tbody td{
+    padding: 10px;
+    color: #333;
+    text-align: center;
+}
+
+div#tabelaProdutos table tbody td:first-child{
+    text-align: left;
+}
+
+div#tabelaProdutos .price{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.btncarrinho button{
+    font-size: 14px;
+    color: rgb(255, 255, 255);
+    padding: 10px 25px;
+    background: rgb(74, 152, 255);
+    cursor: pointer;
+    transition: .3s;
+    border: none;
+    border-radius: 5px;
+    margin: 10px 5px;
+}
+
+.titulocarrinho h1{
+    text-align: center;
+    width: 100%;
+    padding: 10px;
+    background: rgb(74, 101, 255);
+    color: rgb(255, 255, 255);
+}
+
+.titulocarrinho p{
+    margin-top: 30px;
+    text-align: center;
+}
+
+.btncarrinho p{
+    margin-top: 30px;
+    text-align: center;
+}
+
+
+

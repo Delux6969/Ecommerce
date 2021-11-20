@@ -1,0 +1,12 @@
+{
+    "name": "zereis-dev/ecommerce",
+    "authors": [
+        {
+            "name": "zereis240620",
+            "email": "josedrm2000@gmail.com"
+        }
+    ],
+    "require": {
+        "mercadopago/dx-php": "^2.4"
+    }
+}
